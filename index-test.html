@@ -14,6 +14,53 @@
         .menu { background: white; border-radius: 10px; padding: 10px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; position: sticky; top: 10px; z-index: 100; }
         .menu a { color: #1e3c72; text-decoration: none; font-weight: bold; padding: 10px 18px; border-radius: 20px; font-size: 13px; cursor: pointer; }
         .menu a:hover { background: #1e3c72; color: white; }
+        
+        /* Style pour la dédicace */
+        .dedicace {
+            background-color: #fffaf0;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            direction: rtl;
+            font-family: 'Traditional Arabic', 'Amiri', 'Segoe UI', Tahoma, sans-serif;
+            border-right: 5px solid #d4af37;
+            border-left: 1px solid #eee;
+        }
+        .dedicace h2 {
+            color: #1e3c72;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+        }
+        .dedicace h3 {
+            color: #b8860b;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            border-bottom: 1px dashed #ddd;
+            padding-bottom: 5px;
+        }
+        .dedicace p {
+            margin-bottom: 12px;
+            text-align: justify;
+            line-height: 1.7;
+        }
+        .dedicace hr {
+            margin: 15px 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ccc, transparent);
+        }
+        .dedicace .signature {
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+            color: #7f8c8d;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            direction: ltr;
+        }
+        
         .section { background: white; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); scroll-margin-top: 80px; }
         .section h2 { color: #1e3c72; border-bottom: 3px solid #ffd966; padding-bottom: 10px; margin-bottom: 0; cursor: pointer; user-select: none; display: flex; justify-content: space-between; align-items: center; }
         .section h2::after { content: "▼"; font-size: 14px; transition: transform 0.3s; }
@@ -67,6 +114,32 @@
         <a onclick="document.getElementById('concours').scrollIntoView({behavior:'smooth'}); return false;">Concours Nationaux tunisiens</a>
         <a onclick="document.getElementById('liens').scrollIntoView({behavior:'smooth'}); return false;">Liens & Contact</a>
     </nav>
+
+    <!-- DÉDICACE AJOUTÉE ICI -->
+    <div class="dedicace">
+        <h2>بسم الله الرحمن الرحيم</h2>
+        <p style="text-align:center; font-size:1.1rem; font-weight:bold;">إهداء إلى الأم الرحمة، الأب، الزوجة، والزميلة إيناس خفشة</p>
+        
+        <h3>إلى أمي العزيزة</h3>
+        <p>التي رحلت من هذه الدنيا فجأة يوم 9 سبتمبر 2014 عن عمر 66 سنة، وتركت لوعة في قلوبنا لن ننساها، فلقد كانت أطيب خلق الله، والجميع يحبها. أقول لك: أمي، لم تتركي يوماً ذكري، وصورتك تزين جدران منزلي وكل حساباتي في الإنترنت.</p>
+        
+        <h3>إلى أبي الحاج الفاضل</h3>
+        <p>أتمنى له صحة جيدة وشفاء عاجلاً، فهو قدوة عائلتنا ومصدر فخرنا. فلقد خلق من فراغ لنا طريقاً كافحنا فيه حتى النجاح. وها أنا على عتبة الستين، وأحس نفسي دائماً طفلاً صغيراً أمام عظمة والدي. والحمد لله، قال لي أكثر من مرة: أنا راض عنك. وأنا كذلك، والله أحبه ملء الدنيا.</p>
+        
+        <hr>
+        
+        <h3>إلى زوجتي الغالية</h3>
+        <p>التي وقفت معي في أصعب فترات حياتي معها لـ24 سنة إلى الآن. صبرت معي على القروض وعلى المرض، وكانت قنوعة، ولا تتدخل أبداً في عملي، وتوفر لي كل مقومات النجاح والتقدم، وهمها في هذه الدنيا هو بيتها وابنها وابنتها. لو وضعنا نساء العالمين في كفة، وزوجتي في كفة أخرى، لرجحت كفة زوجتي.</p>
+        
+        <hr>
+        
+        <h3>وأخيراً إلى زميلتي وأختي وصديقتي السيدة المحترمة الفاضلة إيناس خفشة</h3>
+        <p>لقد درسنا معاً منذ سنة 1988 ثم تخرجنا معاً ولكنها سبقتني بسنة، وها نحن إلى هذا اليوم 08 أبريل 2026 مازلنا ندرس معاً في وئام وانسجام. تربطني بزوجها وعائلتها علاقة صداقة قوية ونبيلة. طيلة 30 عاماً من التدريس في الجامعة كانت ومازالت خير سند ونصيحة وتعاون ونتشاور فيما فيه مصلحة طلبتنا. شكراً إيناس من القلب.</p>
+        
+        <div class="signature">
+            — Lotfi Haddad
+        </div>
+    </div>
 
     <!-- SECTION ACCUEIL -->
     <section class="section open" id="accueil">
@@ -167,6 +240,8 @@
             <div class="subsection" data-path="Concours/Maths2_MP"><h3>Concours Maths 2 MP</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="Concours/PC_PT"><h3>Concours PC/PT</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
         </div>
+    </section>
+    
    <section class="section" id="liens">
     <h2>🔗 Liens et Contact</h2>
     <div class="content">
