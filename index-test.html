@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mathématiques - Haddad Lotfi</title>
     <style>
+        /* Vos styles existants (je les garde identiques) */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f9; color: #333; line-height: 1.6; }
         .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
@@ -102,32 +103,6 @@
     <!-- Les sections MP, MPSI, etc. seront générées dynamiquement -->
     <div id="dynamic-sections"></div>
 
-    <!-- SECTION LIENS & CONTACT (UNE SEULE FOIS, CORRECTEMENT FERMÉE) -->
-    <section class="section" id="liens">
-        <h2>🔗 Liens & Contact</h2>
-        <div class="content">
-            <p>Ici, vous pouvez ajouter tout ce que vous voulez :</p>
-            
-            <h3>📧 Me contacter</h3>
-            <p>Email : <a href="mailto:votre.email@exemple.com" class="email-link">votre.email@exemple.com</a></p>
-            
-            <h3>📚 Ressources complémentaires</h3>
-            <ul>
-                <li><a href="Apprendre_le_LaTeX_de_à_z.pdf">📖 Apprendre LaTeX de A à Z (PDF)</a></li>
-                <li><a href="#">🔗 Autre lien important</a></li>
-            </ul>
-            
-            <h3>✍️ Message personnel</h3>
-            <p>J'ajoute comme je veux dans liens et contact. Ici, je peux écrire tout ce qui me passe par la tête :</p>
-            <ul>
-                <li>✅ Des annonces</li>
-                <li>✅ Des documents supplémentaires</li>
-                <li>✅ Des liens utiles</li>
-                <li>✅ Et tout autre contenu que je souhaite partager</li>
-            </ul>
-        </div>
-    </section>
-
     <div class="legal">
         <h3>📢 À propos de ce site</h3>
         <p>Les documents sont gratuits. Il est autorisé de :</p>
@@ -150,7 +125,8 @@ const sectionsConfig = [
     { id: "mpsi", title: "📗 MPSI (Première année Mathématiques et Physique)", path: "MPSI", subs: ["Cours", "Devoirs", "Problemes", "Archives", "Divers"] },
     { id: "pcpt", title: "📕 PC / PT (Deuxièmes années Physique-chimie et Préparatoire Technologie)", path: "PC_PT", subs: ["Cours", "Devoirs", "Problemes", "Archives", "Divers"] },
     { id: "pcsi", title: "🧪 PCSI / PTSI (Premières années Physique-chimie et Préparatoire Technologie)", path: "PCSI_PTSI", subs: ["Cours", "Devoirs", "Problemes", "Archives", "Divers"] },
-    { id: "concours", title: "📂 Concours Nationaux tunisiens", path: "Concours", subs: ["Maths1_MP", "Maths2_MP", "PC_PT"] }
+    { id: "concours", title: "📂 Concours Nationaux tunisiens", path: "Concours", subs: ["Maths1_MP", "Maths2_MP", "PC_PT"] },
+    { id: "liens", title: "🔗 Liens & Contact", path: "Liens_Contact", subs: ["Documents", "Contact"] }
 ];
 
 // Fonction pour afficher le contenu d'un dossier avec gestion des sous-dossiers
@@ -169,7 +145,6 @@ async function renderFolderContent(container, path, level = 0) {
         
         let html = "";
         
-        // Afficher les sous-dossiers
         for (const folder of folders) {
             html += `
                 <div class="folder-item">
@@ -181,7 +156,6 @@ async function renderFolderContent(container, path, level = 0) {
             `;
         }
         
-        // Afficher les fichiers PDF directement dans ce dossier
         if (files.length > 0) {
             let fileHtml = "<ul>";
             for (const f of files) {
@@ -193,7 +167,6 @@ async function renderFolderContent(container, path, level = 0) {
         
         container.innerHTML = html;
         
-        // Charger le contenu de chaque sous-dossier
         for (const folder of folders) {
             const subContainer = document.getElementById(`content-${path.replace(/\//g, '-')}-${folder.name}`);
             if (subContainer) {
@@ -210,7 +183,7 @@ async function renderFolderContent(container, path, level = 0) {
     }
 }
 
-// Fonction pour créer une sous-section (Cours, Devoirs, etc.)
+// Fonction pour créer une sous-section
 function createSubsection(title, path) {
     const subsectionDiv = document.createElement('div');
     subsectionDiv.className = 'subsection';
@@ -226,7 +199,6 @@ function createSubsection(title, path) {
         subsectionDiv.classList.toggle('open');
     });
     
-    // Charger le contenu
     renderFolderContent(subsectionDiv.querySelector('.folder-list'), path);
     
     return subsectionDiv;
@@ -258,7 +230,6 @@ function buildSections() {
         sectionDiv.appendChild(contentDiv);
         container.appendChild(sectionDiv);
         
-        // Gestion de l'accordéon pour la section
         h2.addEventListener('click', () => {
             sectionDiv.classList.toggle('open');
         });
@@ -269,7 +240,6 @@ function buildSections() {
 window.onload = () => {
     buildSections();
     
-    // Gestion du défilement depuis le menu
     const menuLinks = document.querySelectorAll('.menu a');
     menuLinks.forEach(link => {
         link.addEventListener('click', (e) => {
