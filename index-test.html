@@ -15,52 +15,6 @@
         .menu a { color: #1e3c72; text-decoration: none; font-weight: bold; padding: 10px 18px; border-radius: 20px; font-size: 13px; cursor: pointer; }
         .menu a:hover { background: #1e3c72; color: white; }
         
-        /* Style pour la dédicace */
-        .dedicace {
-            background-color: #fffaf0;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-            direction: rtl;
-            font-family: 'Traditional Arabic', 'Amiri', 'Segoe UI', Tahoma, sans-serif;
-            border-right: 5px solid #d4af37;
-            border-left: 1px solid #eee;
-        }
-        .dedicace h2 {
-            color: #1e3c72;
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.6rem;
-        }
-        .dedicace h3 {
-            color: #b8860b;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-            border-bottom: 1px dashed #ddd;
-            padding-bottom: 5px;
-        }
-        .dedicace p {
-            margin-bottom: 12px;
-            text-align: justify;
-            line-height: 1.7;
-        }
-        .dedicace hr {
-            margin: 15px 0;
-            border: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, #ccc, transparent);
-        }
-        .dedicace .signature {
-            text-align: center;
-            margin-top: 20px;
-            font-style: italic;
-            color: #7f8c8d;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            direction: ltr;
-        }
-        
         .section { background: white; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); scroll-margin-top: 80px; }
         .section h2 { color: #1e3c72; border-bottom: 3px solid #ffd966; padding-bottom: 10px; margin-bottom: 0; cursor: pointer; user-select: none; display: flex; justify-content: space-between; align-items: center; }
         .section h2::after { content: "▼"; font-size: 14px; transition: transform 0.3s; }
@@ -91,6 +45,56 @@
         .livres-list li::before { content: "📚"; position: absolute; left: -5px; }
         .citation { font-style: italic; background: #f9f3e0; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 5px solid #ffd966; }
         .email-link { color: #2a5298; text-decoration: none; font-weight: bold; }
+
+        /* Style pour les actualités */
+        .actualite-card {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-right: 4px solid;
+            transition: transform 0.2s;
+        }
+        .actualite-card:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .actualite-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        .actualite-date {
+            font-size: 0.85rem;
+            color: #888;
+        }
+        .actualite-categorie {
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+        }
+        .actualite-contenu-arabe {
+            direction: rtl;
+            font-family: 'Traditional Arabic', 'Amiri', sans-serif;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        .actualite-contenu-arabe h3 {
+            color: #b8860b;
+            margin-bottom: 8px;
+        }
+        .actualite-contenu-francais {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        .actualite-contenu-francais h3 {
+            color: #1e3c72;
+            margin-bottom: 8px;
+        }
     </style>
 </head>
 <body>
@@ -113,33 +117,8 @@
         <a onclick="document.getElementById('pcsi').scrollIntoView({behavior:'smooth'}); return false;">PCSI / PTSI</a>
         <a onclick="document.getElementById('concours').scrollIntoView({behavior:'smooth'}); return false;">Concours Nationaux tunisiens</a>
         <a onclick="document.getElementById('liens').scrollIntoView({behavior:'smooth'}); return false;">Liens & Contact</a>
+        <a onclick="document.getElementById('Actualites').scrollIntoView({behavior:'smooth'}); return false;">📰 Actualités</a>
     </nav>
-
-    <!-- DÉDICACE AJOUTÉE ICI -->
-    <div class="dedicace">
-        <h2>بسم الله الرحمن الرحيم</h2>
-        <p style="text-align:center; font-size:1.1rem; font-weight:bold;">إهداء إلى الأم الرحمة، الأب، الزوجة، والزميلة إيناس خفشة</p>
-        
-        <h3>إلى أمي العزيزة</h3>
-        <p>التي رحلت من هذه الدنيا فجأة يوم 9 سبتمبر 2014 عن عمر 66 سنة، وتركت لوعة في قلوبنا لن ننساها، فلقد كانت أطيب خلق الله، والجميع يحبها. أقول لك: أمي، لم تتركي يوماً ذكري، وصورتك تزين جدران منزلي وكل حساباتي في الإنترنت.</p>
-        
-        <h3>إلى أبي الحاج الفاضل</h3>
-        <p>أتمنى له صحة جيدة وشفاء عاجلاً، فهو قدوة عائلتنا ومصدر فخرنا. فلقد خلق من فراغ لنا طريقاً كافحنا فيه حتى النجاح. وها أنا على عتبة الستين، وأحس نفسي دائماً طفلاً صغيراً أمام عظمة والدي. والحمد لله، قال لي أكثر من مرة: أنا راض عنك. وأنا كذلك، والله أحبه ملء الدنيا.</p>
-        
-        <hr>
-        
-        <h3>إلى زوجتي الغالية</h3>
-        <p>التي وقفت معي في أصعب فترات حياتي معها لـ24 سنة إلى الآن. صبرت معي على القروض وعلى المرض، وكانت قنوعة، ولا تتدخل أبداً في عملي، وتوفر لي كل مقومات النجاح والتقدم، وهمها في هذه الدنيا هو بيتها وابنها وابنتها. لو وضعنا نساء العالمين في كفة، وزوجتي في كفة أخرى، لرجحت كفة زوجتي.</p>
-        
-        <hr>
-        
-        <h3>وأخيراً إلى زميلتي وأختي وصديقتي السيدة المحترمة الفاضلة إيناس خفشة</h3>
-        <p>لقد درسنا معاً منذ سنة 1988 ثم تخرجنا معاً ولكنها سبقتني بسنة، وها نحن إلى هذا اليوم 08 أبريل 2026 مازلنا ندرس معاً في وئام وانسجام. تربطني بزوجها وعائلتها علاقة صداقة قوية ونبيلة. طيلة 30 عاماً من التدريس في الجامعة كانت ومازالت خير سند ونصيحة وتعاون ونتشاور فيما فيه مصلحة طلبتنا. شكراً إيناس من القلب.</p>
-        
-        <div class="signature">
-            — Lotfi Haddad
-        </div>
-    </div>
 
     <!-- SECTION ACCUEIL -->
     <section class="section open" id="accueil">
@@ -172,7 +151,7 @@
         </div>
     </section>
 
-    <!-- SECTION MP (Maths 1 et Maths 2) -->
+    <!-- SECTION MP -->
     <section class="section" id="mp">
         <h2>📘 MP (Deuxième année Mathématiques et Physique)</h2>
         <div class="content">
@@ -190,7 +169,7 @@
         </div>
     </section>
 
-    <!-- SECTION MPSI (Analyse et Algèbre) -->
+    <!-- SECTION MPSI -->
     <section class="section" id="mpsi">
         <h2>📗 MPSI (Première année Mathématiques et Physique)</h2>
         <div class="content">
@@ -242,27 +221,38 @@
         </div>
     </section>
     
-   <section class="section" id="liens">
-    <h2>🔗 Liens et Contact</h2>
-    <div class="content">
-        <p>📧 Email : <a href="mailto:lotfi.haddad@ipeiem.utm.tn" class="email-link">lotfi.haddad@ipeiem.utm.tn</a></p>
-        
-        <h3 style="margin: 20px 0 10px 0; color: #1e3c72;">📚 Sites et ressources utiles</h3>
-        <ul style="list-style: none; padding-left: 0;">
-            <li style="margin: 8px 0;">🔗 <a href="https://ipeiem.rnu.tn/" target="_blank">IPEI El Manar</a></li>
-            <li style="margin: 8px 0;">🔗 <a href="https://prepas.org/index.php?module=Sujets" target="_blank">Prepas.org - Sujets de concours</a></li>
-            <li style="margin: 8px 0;">🔗 <a href="https://www.mp2-chato.fr/" target="_blank">MP² Chato</a></li>
-            <li style="margin: 8px 0;">🔗 <a href="https://alkendy.ma/index.htm" target="_blank">Alkendy - Mathématiques</a></li>
-            <li style="margin: 8px 0;">🔗 <a href="https://cahier-de-prepa.fr/mpsi3-fermat/" target="_blank">Cahier de prépa - MPSI Fermat</a></li>
-            <li style="margin: 8px 0;">🔗 <a href="https://cahier-de-prepa.fr/mp-ism/" target="_blank">Cahier de prépa - MP ISM</a></li>
-            <li style="margin: 8px 0;">🔗 <a href="http://pcsi.lazos.free.fr/" target="_blank">PCSI - Lazos</a></li>
-            <li style="margin: 8px 0;">🔗 <a href="https://ghaberer.bitbucket.io/mathematiques/" target="_blank">GHaberer - Mathématiques</a></li>
-            <li style="margin: 8px 0;">🔗 <a href="https://lionelchaussade.wixsite.com/website" target="_blank">Lionel Chaussade</a></li>
-        </ul>
-        
-        <p style="margin-top: 20px;">💡 Pour toute question ou remarque, n'hésitez pas à me contacter.</p>
-    </div>
-</section>
+    <!-- SECTION LIENS ET CONTACT -->
+    <section class="section" id="liens">
+        <h2>🔗 Liens et Contact</h2>
+        <div class="content">
+            <p>📧 Email : <a href="mailto:lotfi.haddad@ipeiem.utm.tn" class="email-link">lotfi.haddad@ipeiem.utm.tn</a></p>
+            
+            <h3 style="margin: 20px 0 10px 0; color: #1e3c72;">📚 Sites et ressources utiles</h3>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="margin: 8px 0;">🔗 <a href="https://ipeiem.rnu.tn/" target="_blank">IPEI El Manar</a></li>
+                <li style="margin: 8px 0;">🔗 <a href="https://prepas.org/index.php?module=Sujets" target="_blank">Prepas.org - Sujets de concours</a></li>
+                <li style="margin: 8px 0;">🔗 <a href="https://www.mp2-chato.fr/" target="_blank">MP² Chato</a></li>
+                <li style="margin: 8px 0;">🔗 <a href="https://alkendy.ma/index.htm" target="_blank">Alkendy - Mathématiques</a></li>
+                <li style="margin: 8px 0;">🔗 <a href="https://cahier-de-prepa.fr/mpsi3-fermat/" target="_blank">Cahier de prépa - MPSI Fermat</a></li>
+                <li style="margin: 8px 0;">🔗 <a href="https://cahier-de-prepa.fr/mp-ism/" target="_blank">Cahier de prépa - MP ISM</a></li>
+                <li style="margin: 8px 0;">🔗 <a href="http://pcsi.lazos.free.fr/" target="_blank">PCSI - Lazos</a></li>
+                <li style="margin: 8px 0;">🔗 <a href="https://ghaberer.bitbucket.io/mathematiques/" target="_blank">GHaberer - Mathématiques</a></li>
+                <li style="margin: 8px 0;">🔗 <a href="https://lionelchaussade.wixsite.com/website" target="_blank">Lionel Chaussade</a></li>
+            </ul>
+            
+            <p style="margin-top: 20px;">💡 Pour toute question ou remarque, n'hésitez pas à me contacter.</p>
+        </div>
+    </section>
+
+    <!-- SECTION ACTUALITÉS (DERNIÈRE) -->
+    <section class="section" id="Actualites">
+        <h2>📰 Actualités</h2>
+        <div class="content">
+            <div id="actualites-container">
+                <div style="text-align:center; padding:20px;">📰 Chargement des actualités...</div>
+            </div>
+        </div>
+    </section>
 
     <div class="legal">
         <h3>📢 À propos de ce site</h3>
@@ -363,16 +353,57 @@ function loadAll() {
     });
 }
 
+// Chargeur d'actualités illimité depuis le dossier "Actualites"
+async function chargerActualites() {
+    const container = document.getElementById('actualites-container');
+    if (!container) return;
+    
+    container.innerHTML = '<div style="text-align:center; padding:20px;">📰 Chargement des actualités...</div>';
+    
+    try {
+        const reponse = await fetch('https://api.github.com/repos/lotfihaddad-dot/lotfihaddad-dot.github.io/contents/Actualites');
+        const fichiers = await reponse.json();
+        
+        const articles = fichiers.filter(f => f.name.endsWith('.html') && f.type === 'file');
+        articles.sort((a, b) => b.name.localeCompare(a.name));
+        
+        if (articles.length === 0) {
+            container.innerHTML = '<div style="text-align:center; padding:20px;">📭 Aucune actualité pour le moment.</div>';
+            return;
+        }
+        
+        let html = '';
+        for (const article of articles) {
+            const contenuReponse = await fetch(article.download_url);
+            const contenu = await contenuReponse.text();
+            html += contenu;
+        }
+        
+        container.innerHTML = html;
+        
+    } catch (erreur) {
+        console.error('Erreur:', erreur);
+        container.innerHTML = '<div style="text-align:center; padding:20px;">❌ Erreur de chargement. Vérifiez que le dossier "Actualites" existe.</div>';
+    }
+}
+
 window.onload = () => {
     initAccordion();
     loadAll();
+    chargerActualites();
     
     document.querySelectorAll('.menu a').forEach(link => {
         link.addEventListener('click', (e) => {
-            const targetId = link.getAttribute('onclick').match(/'([^']+)'/)[1];
-            const targetSection = document.getElementById(targetId);
-            if (targetSection && targetSection.id !== 'accueil') {
-                targetSection.classList.add('open');
+            const onclickAttr = link.getAttribute('onclick');
+            if (onclickAttr) {
+                const match = onclickAttr.match(/'([^']+)'/);
+                if (match) {
+                    const targetId = match[1];
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection && targetSection.id !== 'accueil') {
+                        targetSection.classList.add('open');
+                    }
+                }
             }
         });
     });
