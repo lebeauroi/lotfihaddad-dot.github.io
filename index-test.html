@@ -45,56 +45,6 @@
         .livres-list li::before { content: "📚"; position: absolute; left: -5px; }
         .citation { font-style: italic; background: #f9f3e0; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 5px solid #ffd966; }
         .email-link { color: #2a5298; text-decoration: none; font-weight: bold; }
-
-        /* Style pour les actualités */
-        .actualite-card {
-            background: #f9f9f9;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-right: 4px solid;
-            transition: transform 0.2s;
-        }
-        .actualite-card:hover {
-            transform: translateX(-5px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .actualite-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-bottom: 15px;
-        }
-        .actualite-date {
-            font-size: 0.85rem;
-            color: #888;
-        }
-        .actualite-categorie {
-            color: white;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 0.75rem;
-        }
-        .actualite-contenu-arabe {
-            direction: rtl;
-            font-family: 'Traditional Arabic', 'Amiri', sans-serif;
-            margin-bottom: 15px;
-            line-height: 1.7;
-        }
-        .actualite-contenu-arabe h3 {
-            color: #b8860b;
-            margin-bottom: 8px;
-        }
-        .actualite-contenu-francais {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #ddd;
-        }
-        .actualite-contenu-francais h3 {
-            color: #1e3c72;
-            margin-bottom: 8px;
-        }
     </style>
 </head>
 <body>
@@ -116,8 +66,8 @@
         <a onclick="document.getElementById('pcpt').scrollIntoView({behavior:'smooth'}); return false;">PC / PT</a>
         <a onclick="document.getElementById('pcsi').scrollIntoView({behavior:'smooth'}); return false;">PCSI / PTSI</a>
         <a onclick="document.getElementById('concours').scrollIntoView({behavior:'smooth'}); return false;">Concours Nationaux tunisiens</a>
+        <a onclick="document.getElementById('actualites').scrollIntoView({behavior:'smooth'}); return false;">📰 Actualités</a>
         <a onclick="document.getElementById('liens').scrollIntoView({behavior:'smooth'}); return false;">Liens & Contact</a>
-        <a onclick="document.getElementById('Actualites').scrollIntoView({behavior:'smooth'}); return false;">📰 Actualités</a>
     </nav>
 
     <!-- SECTION ACCUEIL -->
@@ -220,7 +170,20 @@
             <div class="subsection" data-path="Concours/PC_PT"><h3>Concours PC/PT</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
         </div>
     </section>
-    
+
+    <!-- SECTION ACTUALITÉS -->
+    <section class="section" id="actualites">
+        <h2>📰 Actualités</h2>
+        <div class="content">
+            <div class="subsection" data-path="Actualites">
+                <h3>📁 Tous les documents</h3>
+                <div class="subcontent">
+                    <div class="folder-list">Chargement...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SECTION LIENS ET CONTACT -->
     <section class="section" id="liens">
         <h2>🔗 Liens et Contact</h2>
@@ -241,17 +204,6 @@
             </ul>
             
             <p style="margin-top: 20px;">💡 Pour toute question ou remarque, n'hésitez pas à me contacter.</p>
-        </div>
-        <!-- SECTION ACTUALITÉS -->
-    <section class="section" id="actualites">
-        <h2>📰 Actualités</h2>
-        <div class="content">
-            <div class="subsection" data-path="Actualites">
-                <h3>📁 Tous les documents</h3>
-                <div class="subcontent">
-                    <div class="folder-list">Chargement...</div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -354,44 +306,9 @@ function loadAll() {
     });
 }
 
-// Chargeur d'actualités illimité depuis le dossier "Actualites"
-async function chargerActualites() {
-    const container = document.getElementById('actualites-container');
-    if (!container) return;
-    
-    container.innerHTML = '<div style="text-align:center; padding:20px;">📰 Chargement des actualités...</div>';
-    
-    try {
-        const reponse = await fetch('https://api.github.com/repos/lotfihaddad-dot/lotfihaddad-dot.github.io/contents/Actualites');
-        const fichiers = await reponse.json();
-        
-        const articles = fichiers.filter(f => f.name.endsWith('.html') && f.type === 'file');
-        articles.sort((a, b) => b.name.localeCompare(a.name));
-        
-        if (articles.length === 0) {
-            container.innerHTML = '<div style="text-align:center; padding:20px;">📭 Aucune actualité pour le moment.</div>';
-            return;
-        }
-        
-        let html = '';
-        for (const article of articles) {
-            const contenuReponse = await fetch(article.download_url);
-            const contenu = await contenuReponse.text();
-            html += contenu;
-        }
-        
-        container.innerHTML = html;
-        
-    } catch (erreur) {
-        console.error('Erreur:', erreur);
-        container.innerHTML = '<div style="text-align:center; padding:20px;">❌ Erreur de chargement. Vérifiez que le dossier "Actualites" existe.</div>';
-    }
-}
-
 window.onload = () => {
     initAccordion();
     loadAll();
-    chargerActualites();
     
     document.querySelectorAll('.menu a').forEach(link => {
         link.addEventListener('click', (e) => {
