@@ -14,7 +14,6 @@
         .menu { background: white; border-radius: 10px; padding: 10px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; position: sticky; top: 10px; z-index: 100; }
         .menu a { color: #1e3c72; text-decoration: none; font-weight: bold; padding: 10px 18px; border-radius: 20px; font-size: 13px; cursor: pointer; }
         .menu a:hover { background: #1e3c72; color: white; }
-        
         .section { background: white; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); scroll-margin-top: 80px; }
         .section h2 { color: #1e3c72; border-bottom: 3px solid #ffd966; padding-bottom: 10px; margin-bottom: 0; cursor: pointer; user-select: none; display: flex; justify-content: space-between; align-items: center; }
         .section h2::after { content: "▼"; font-size: 14px; transition: transform 0.3s; }
@@ -45,6 +44,14 @@
         .livres-list li::before { content: "📚"; position: absolute; left: -5px; }
         .citation { font-style: italic; background: #f9f3e0; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 5px solid #ffd966; }
         .email-link { color: #2a5298; text-decoration: none; font-weight: bold; }
+        .actualite-libre {
+            background: #fef9e6;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #d4af37;
+        }
+        .actualite-libre h3 { color: #b8860b; margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -66,11 +73,11 @@
         <a onclick="document.getElementById('pcpt').scrollIntoView({behavior:'smooth'}); return false;">PC / PT</a>
         <a onclick="document.getElementById('pcsi').scrollIntoView({behavior:'smooth'}); return false;">PCSI / PTSI</a>
         <a onclick="document.getElementById('concours').scrollIntoView({behavior:'smooth'}); return false;">Concours Nationaux tunisiens</a>
-        <a onclick="document.getElementById('actualites').scrollIntoView({behavior:'smooth'}); return false;">📰 Actualités</a>
         <a onclick="document.getElementById('liens').scrollIntoView({behavior:'smooth'}); return false;">Liens & Contact</a>
+        <a onclick="document.getElementById('actualites').scrollIntoView({behavior:'smooth'}); return false;">📰 Actualités</a>
     </nav>
 
-    <!-- SECTION ACCUEIL -->
+    <!-- ================= SECTION ACCUEIL ================= -->
     <section class="section open" id="accueil">
         <h2>🏠 Accueil</h2>
         <div class="content">
@@ -101,43 +108,49 @@
         </div>
     </section>
 
-    <!-- SECTION MP -->
+    <!-- ================= SECTION MP ================= -->
     <section class="section" id="mp">
         <h2>📘 MP (Deuxième année Mathématiques et Physique)</h2>
         <div class="content">
+            <!-- Maths 1 -->
             <div class="subsection" data-path="MP/Maths 1/Cours"><h3>Cours - Maths 1</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="MP/Maths 1/Devoirs"><h3>Devoirs - Maths 1</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="MP/Maths 1/Problèmes"><h3>Problèmes - Maths 1</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="MP/Maths 1/Archives"><h3>Archives - Maths 1</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="MP/Maths 1/Divers"><h3>Divers - Maths 1</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
-            
+            <div class="subsection" data-path="MP/Maths 1/Séries d'exercices"><h3>Séries d'exercices - Maths 1</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
+            <!-- Maths 2 -->
             <div class="subsection" data-path="MP/Maths 2/Cours"><h3>Cours - Maths 2</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="MP/Maths 2/Devoirs"><h3>Devoirs - Maths 2</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="MP/Maths 2/Problèmes"><h3>Problèmes - Maths 2</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="MP/Maths 2/Archives"><h3>Archives - Maths 2</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="MP/Maths 2/Divers"><h3>Divers - Maths 2</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
+            <div class="subsection" data-path="MP/Maths 2/Séries d'exercices"><h3>Séries d'exercices - Maths 2</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
         </div>
     </section>
 
-    <!-- SECTION MPSI -->
+    <!-- ================= SECTION MPSI ================= -->
     <section class="section" id="mpsi">
         <h2>📗 MPSI (Première année Mathématiques et Physique)</h2>
         <div class="content">
+            <!-- Analyse -->
             <div class="subsection" data-path="MPSI/Analyse/Cours"><h3>Cours - Analyse</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="MPSI/Analyse/Devoirs"><h3>Devoirs - Analyse</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="MPSI/Analyse/Problèmes"><h3>Problèmes - Analyse</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="MPSI/Analyse/Archives"><h3>Archives - Analyse</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="MPSI/Analyse/Divers"><h3>Divers - Analyse</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
-            
+            <div class="subsection" data-path="MPSI/Analyse/Séries d'exercices"><h3>Séries d'exercices - Analyse</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
+            <!-- Algèbre -->
             <div class="subsection" data-path="MPSI/Algèbre/Cours"><h3>Cours - Algèbre</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="MPSI/Algèbre/Devoirs"><h3>Devoirs - Algèbre</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="MPSI/Algèbre/Problèmes"><h3>Problèmes - Algèbre</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="MPSI/Algèbre/Archives"><h3>Archives - Algèbre</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="MPSI/Algèbre/Divers"><h3>Divers - Algèbre</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
+            <div class="subsection" data-path="MPSI/Algèbre/Séries d'exercices"><h3>Séries d'exercices - Algèbre</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
         </div>
     </section>
 
-    <!-- SECTION PC/PT -->
+    <!-- ================= SECTION PC/PT ================= -->
     <section class="section" id="pcpt">
         <h2>📕 PC / PT (Deuxièmes années Physique-chimie et Préparatoire Technologie)</h2>
         <div class="content">
@@ -146,10 +159,11 @@
             <div class="subsection" data-path="PC_PT/Problèmes"><h3>Problèmes</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="PC_PT/Archives"><h3>Archives</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="PC_PT/Divers"><h3>Divers</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
+            <div class="subsection" data-path="PC_PT/Séries d'exercices"><h3>Séries d'exercices</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
         </div>
     </section>
 
-    <!-- SECTION PCSI/PTSI -->
+    <!-- ================= SECTION PCSI/PTSI ================= -->
     <section class="section" id="pcsi">
         <h2>🧪 PCSI / PTSI (Premières années Physique-chimie et Préparatoire Technologie)</h2>
         <div class="content">
@@ -158,38 +172,25 @@
             <div class="subsection" data-path="PCSI_PTSI/Problèmes"><h3>Problèmes</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="PCSI_PTSI/Archives"><h3>Archives</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="PCSI_PTSI/Divers"><h3>Divers</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
+            <div class="subsection" data-path="PCSI_PTSI/Séries d'exercices"><h3>Séries d'exercices</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
         </div>
     </section>
 
-    <!-- SECTION CONCOURS NATIONAUX -->
+    <!-- ================= SECTION CONCOURS ================= -->
     <section class="section" id="concours">
         <h2>📂 Concours Nationaux tunisiens</h2>
         <div class="content">
             <div class="subsection" data-path="Concours/Maths1_MP"><h3>Concours Maths 1 MP</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="Concours/Maths2_MP"><h3>Concours Maths 2 MP</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
             <div class="subsection" data-path="Concours/PC_PT"><h3>Concours PC/PT</h3><div class="subcontent"><div class="folder-list">Chargement...</div></div></div>
-           
-
-
-        <!-- SECTION ACTUALITÉS -->
-       <section class="section" id="actualites">
-        <h2>📰 Actualités</h2>
-        <div class="content">
-            <div class="subsection" data-path="Actualités">
-                <h3>📁 Tous les documents</h3>
-                <div class="subcontent">
-                    <div class="folder-list">Chargement...</div>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- SECTION LIENS ET CONTACT -->
+    <!-- ================= SECTION LIENS ET CONTACT ================= -->
     <section class="section" id="liens">
         <h2>🔗 Liens et Contact</h2>
         <div class="content">
             <p>📧 Email : <a href="mailto:lotfi.haddad@ipeiem.utm.tn" class="email-link">lotfi.haddad@ipeiem.utm.tn</a></p>
-            
             <h3 style="margin: 20px 0 10px 0; color: #1e3c72;">📚 Sites et ressources utiles</h3>
             <ul style="list-style: none; padding-left: 0;">
                 <li style="margin: 8px 0;">🔗 <a href="https://ipeiem.rnu.tn/" target="_blank">IPEI El Manar</a></li>
@@ -202,8 +203,24 @@
                 <li style="margin: 8px 0;">🔗 <a href="https://ghaberer.bitbucket.io/mathematiques/" target="_blank">GHaberer - Mathématiques</a></li>
                 <li style="margin: 8px 0;">🔗 <a href="https://lionelchaussade.wixsite.com/website" target="_blank">Lionel Chaussade</a></li>
             </ul>
-            
             <p style="margin-top: 20px;">💡 Pour toute question ou remarque, n'hésitez pas à me contacter.</p>
+        </div>
+    </section>
+
+    <!-- ================= SECTION ACTUALITÉS (EN DERNIER, LIBRE) ================= -->
+    <section class="section" id="actualites">
+        <h2>📰 Actualités</h2>
+        <div class="content">
+            <!-- ========================================================= -->
+            <!-- ICI, VOUS POUVEZ AJOUTER TOUT CE QUE VOUS VOULEZ :        -->
+            <!-- Texte, images, vidéos, PDF, liens, annonces, dédicaces... -->
+            <!-- ========================================================= -->
+            <div class="actualite-libre">
+                <h3>📅 11 Avril 2026</h3>
+                <p>Bienvenue sur la nouvelle section Actualités ! Vous pouvez remplacer ce texte par vos propres annonces, dédicaces, informations, etc.</p>
+                <p>✏️ Pour ajouter du contenu, modifiez directement la section <code>&lt;div class="content"&gt;</code> de <strong>Actualités</strong> dans le fichier <code>index.html</code>.</p>
+            </div>
+            <!-- Vous pouvez ajouter autant de blocs "actualite-libre" que vous voulez -->
         </div>
     </section>
 
@@ -227,50 +244,28 @@ async function renderFolderContent(container, path) {
     try {
         const res = await fetch(`${API}/${path}`);
         const items = await res.json();
-        
         if (!Array.isArray(items)) {
             container.innerHTML = "<em>Aucun document.</em>";
             return;
         }
-        
         const folders = items.filter(i => i.type === "dir").sort((a,b) => a.name.localeCompare(b.name));
         const files = items.filter(i => i.type === "file" && i.name.toLowerCase().endsWith('.pdf')).sort((a,b) => a.name.localeCompare(b.name));
-        
         let html = "";
-        
         for (const folder of folders) {
-            html += `
-                <div class="folder-item">
-                    <div class="folder-title" onclick="this.nextElementSibling.classList.toggle('open')">${folder.name}</div>
-                    <div class="folder-content">
-                        <div class="file-list" data-path="${path}/${folder.name}">Chargement...</div>
-                    </div>
-                </div>
-            `;
+            html += `<div class="folder-item"><div class="folder-title" onclick="this.nextElementSibling.classList.toggle('open')">${folder.name}</div><div class="folder-content"><div class="file-list" data-path="${path}/${folder.name}">Chargement...</div></div></div>`;
         }
-        
         if (files.length > 0) {
             let fileHtml = "<ul>";
-            for (const f of files) {
-                fileHtml += `<li>📄 <a href="${f.download_url}" target="_blank">${f.name}</a></li>`;
-            }
+            for (const f of files) fileHtml += `<li>📄 <a href="${f.download_url}" target="_blank">${f.name}</a></li>`;
             fileHtml += "</ul>";
             html += `<div class="file-list">${fileHtml}</div>`;
         }
-        
         container.innerHTML = html;
-        
         for (const folder of folders) {
             const subContainer = container.querySelector(`.file-list[data-path="${path}/${folder.name}"]`);
-            if (subContainer) {
-                await renderFolderContent(subContainer, `${path}/${folder.name}`);
-            }
+            if (subContainer) await renderFolderContent(subContainer, `${path}/${folder.name}`);
         }
-        
-        if (folders.length === 0 && files.length === 0) {
-            container.innerHTML = "<em>Aucun document.</em>";
-        }
-        
+        if (folders.length === 0 && files.length === 0) container.innerHTML = "<em>Aucun document.</em>";
     } catch (error) {
         container.innerHTML = "<em>Dossier non trouvé ou vide.</em>";
     }
@@ -280,17 +275,12 @@ function initAccordion() {
     document.querySelectorAll('.section').forEach(section => {
         const h2 = section.querySelector('h2');
         if (h2 && section.id !== 'accueil') {
-            h2.addEventListener('click', () => {
-                section.classList.toggle('open');
-            });
+            h2.addEventListener('click', () => section.classList.toggle('open'));
         }
     });
-    
     document.querySelectorAll('.subsection').forEach(sub => {
         const h3 = sub.querySelector('h3');
-        h3.addEventListener('click', () => {
-            sub.classList.toggle('open');
-        });
+        h3.addEventListener('click', () => sub.classList.toggle('open'));
     });
 }
 
@@ -299,9 +289,7 @@ function loadAll() {
         const path = sub.getAttribute('data-path');
         if (path) {
             const container = sub.querySelector('.folder-list');
-            if (container) {
-                renderFolderContent(container, path);
-            }
+            if (container) renderFolderContent(container, path);
         }
     });
 }
@@ -309,7 +297,6 @@ function loadAll() {
 window.onload = () => {
     initAccordion();
     loadAll();
-    
     document.querySelectorAll('.menu a').forEach(link => {
         link.addEventListener('click', (e) => {
             const onclickAttr = link.getAttribute('onclick');
@@ -318,9 +305,7 @@ window.onload = () => {
                 if (match) {
                     const targetId = match[1];
                     const targetSection = document.getElementById(targetId);
-                    if (targetSection && targetSection.id !== 'accueil') {
-                        targetSection.classList.add('open');
-                    }
+                    if (targetSection && targetSection.id !== 'accueil') targetSection.classList.add('open');
                 }
             }
         });
