@@ -201,23 +201,36 @@
         </div>
     </section>
 
-   <!-- SECTION ACTUALITÉS -->
+  <!-- SECTION ACTUALITÉS -->
 <section class="section open" id="actualites">
     <h2>📰 Actualités</h2>
     <div class="content">
-        <div class="folder-list" data-path="Actualites">Chargement...</div>
+        <div id="test-actu">Chargement...</div>
     </div>
 </section>
-    <div class="legal">
-        <h3>📢 À propos de ce site</h3>
-        <p>Les documents sont gratuits. Il est autorisé de :</p>
-        <ul class="status-list">
-            <li>les étudier</li>
-            <li>les imprimer</li>
-            <li>les diffuser gratuitement</li>
-        </ul>
-    </div>
-</div>
+
+<script>
+// Test direct de l'API
+fetch('https://api.github.com/repos/lotfihaddad-dot/lotfihaddad-dot.github.io/contents/Actualites')
+    .then(r => r.json())
+    .then(data => {
+        if (Array.isArray(data)) {
+            let html = '<ul>';
+            for (const file of data) {
+                if (file.name.endsWith('.pdf')) {
+                    html += `<li><a href="${file.download_url}" target="_blank">${file.name}</a></li>`;
+                }
+            }
+            html += '</ul>';
+            document.getElementById('test-actu').innerHTML = html;
+        } else {
+            document.getElementById('test-actu').innerHTML = 'Erreur : ' + (data.message || 'Dossier vide');
+        }
+    })
+    .catch(err => {
+        document.getElementById('test-actu').innerHTML = 'Erreur : ' + err.message;
+    });
+</script>
 
 <script>
 const USER = "lotfihaddad-dot";
